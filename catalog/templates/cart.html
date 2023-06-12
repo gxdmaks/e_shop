@@ -1,0 +1,17 @@
+КОРЗИНА: <br>
+{% for product in cart %}
+
+  Название:{{ product.user_product }} <br>
+  Количество:{{ product.user_product_quantity }} <br>
+  <form action="/del_item/{{ product.id }}" method="post">
+    {% csrf_token %}
+    <button>Удалить</button>
+  </form>
+{% endfor %}
+<hr>
+<form method="post">
+      {% csrf_token %}
+  <button>Оформить заказ</button>
+</form>
+<hr>
+<a href="/">Главная</a>
