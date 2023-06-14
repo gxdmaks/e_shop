@@ -14,6 +14,7 @@ class Product(models.Model):
     desc = models.CharField(max_length=150)
     quantity = models.IntegerField()
     price = models.FloatField()
+    product_image = models.ImageField(null=True, blank=True, upload_to='media')
     reviews = models.FloatField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     added_day = models.DateTimeField(auto_now_add=True)
